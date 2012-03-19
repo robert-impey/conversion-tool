@@ -22,7 +22,7 @@ public class ConversionTool {
             if ("FahrToCel".equals(conversion)) {
                 for (int i = 1; i < args.length; i++) {
                     double fahr = Double.parseDouble(args[i]);
-                    double cel = ((fahr - 32) / 9) * 5;
+                    double cel = fahrToCel(fahr);
                     
                     System.out.printf("%f F is %f C\n", fahr, cel);
                 }
@@ -30,5 +30,10 @@ public class ConversionTool {
                 System.err.println("Unrecognised conversion!");
             }
         }
+    }
+
+    public static double fahrToCel(double fahr) {
+        double cel = ((fahr - 32) / 9) * 5;
+        return cel;
     }
 }
