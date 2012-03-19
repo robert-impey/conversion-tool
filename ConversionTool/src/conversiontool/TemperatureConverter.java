@@ -11,6 +11,10 @@ package conversiontool;
 public class TemperatureConverter {
     
     public static double fahrToCel(double fahr) {
+        if (fahr < -459.67) {
+            throw new IllegalArgumentException();
+        }
+        
         double cel = ((fahr - 32) / 9) * 5;
         return cel;
     }

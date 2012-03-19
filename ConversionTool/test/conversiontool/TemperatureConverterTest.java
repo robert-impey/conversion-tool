@@ -4,8 +4,8 @@
  */
 package conversiontool;
 
+import static org.junit.Assert.assertEquals;
 import org.junit.*;
-import static org.junit.Assert.*;
 
 /**
  *
@@ -38,11 +38,23 @@ public class TemperatureConverterTest {
     @Test
     public void testFahrToCel() {
         System.out.println("fahrToCel");
-        double fahr = 0.0;
-        double expResult = 0.0;
+        double fahr = 212;
+        double expResult = 100;
         double result = TemperatureConverter.fahrToCel(fahr);
         assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+    }
+    
+    @Test
+    public void testExtremeFahrToCel() {
+        double fahr = -459.67;
+        double expectedResult = -273.15;
+        double result = TemperatureConverter.fahrToCel(fahr);
+        assertEquals(expectedResult, result, 0.001);
+    }
+    
+    @Test(expected=IllegalArgumentException.class)
+    public void testInvalidFahrToCel() {
+        double fahr = -460;
+        TemperatureConverter.fahrToCel(fahr);
     }
 }
