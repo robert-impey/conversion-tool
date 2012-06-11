@@ -14,7 +14,7 @@ public class ConversionTool {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        if (args.length <= 2) {
+        if (args.length < 2) {
             System.err.println("Please tell me what to do and give me some numbers to convert!");
         } else {
             String conversion = args[0];
