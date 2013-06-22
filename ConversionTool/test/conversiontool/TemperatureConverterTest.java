@@ -38,7 +38,6 @@ public class TemperatureConverterTest {
      */
     @Test
     public void testFahrToCel() {
-        System.out.println("fahrToCel");
         double fahr = 212;
         double expResult = 100;
         double result = TemperatureConverter.fahrToCel(fahr);
@@ -64,7 +63,6 @@ public class TemperatureConverterTest {
      */
     @Test
     public void testCelToFahr() {
-        System.out.println("celToFahr");
         double cel = 100;
         double expResult = 212;
         double result = TemperatureConverter.celToFahr(cel);
