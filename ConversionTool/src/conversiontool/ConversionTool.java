@@ -1,12 +1,16 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * CLI Tool for Converting between Celsius and Fahrenheit.
  */
 package conversiontool;
 
 /**
- *
- * @author robert
+ * The command line interface for the temperature conversion tool.
+ * 
+ * The first argument should be either "FahrToCel" or "CelToFahr".
+ * 
+ * Subsequent arguments should be floats for temperatures to be converted.
+ * 
+ * @author Robert Impey
  */
 public class ConversionTool {
 
@@ -23,7 +27,7 @@ public class ConversionTool {
                     for (int i = 1; i < args.length; i++) {
                         double fahr = Double.parseDouble(args[i]);
                         double cel = TemperatureConverter.fahrToCel(fahr);
-                        
+
                         System.out.printf("%f F is %f C\n", fahr, cel);
                     }
                     break;
@@ -31,7 +35,7 @@ public class ConversionTool {
                     for (int i = 1; i < args.length; i++) {
                         double cel = Double.parseDouble(args[i]);
                         double fahr = TemperatureConverter.celToFahr(cel);
-                        
+
                         System.out.printf("%f C is %f F\n", cel, fahr);
                     }
                     break;

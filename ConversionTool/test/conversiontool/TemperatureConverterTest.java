@@ -1,6 +1,5 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * Test the conversions between temperature scales.
  */
 package conversiontool;
 
@@ -8,8 +7,8 @@ import static org.junit.Assert.assertEquals;
 import org.junit.*;
 
 /**
- *
- * @author robert
+ * Tests for the TemperatureConverter class.
+ * @author Robert Impey
  */
 public class TemperatureConverterTest {
 
@@ -71,7 +70,7 @@ public class TemperatureConverterTest {
         double result = TemperatureConverter.celToFahr(cel);
         assertEquals(expResult, result, ACCEPTED_ERROR);
     }
-    
+
     @Test
     public void testExtremeCelToFahr() {
         double cel = -273.15;
@@ -79,7 +78,7 @@ public class TemperatureConverterTest {
         double result = TemperatureConverter.celToFahr(cel);
         assertEquals(expectedResult, result, ACCEPTED_ERROR);
     }
-    
+
     @Test(expected = IllegalArgumentException.class)
     public void testInvalidCelToFahr() {
         double cel = -274;
