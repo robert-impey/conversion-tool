@@ -12,7 +12,7 @@ import org.junit.*;
  */
 public class TemperatureConverterTest {
 
-    private static final double ACCEPTED_ERROR = 0.001;
+    private static final double ACCEPTABLE_ERROR = 0.001;
 
     public TemperatureConverterTest() {
     }
@@ -41,7 +41,7 @@ public class TemperatureConverterTest {
         double fahr = 212;
         double expResult = 100;
         double result = TemperatureConverter.fahrToCel(fahr);
-        assertEquals(expResult, result, ACCEPTED_ERROR);
+        assertEquals(expResult, result, ACCEPTABLE_ERROR);
     }
 
     @Test
@@ -49,7 +49,7 @@ public class TemperatureConverterTest {
         double fahr = -459.67;
         double expectedResult = -273.15;
         double result = TemperatureConverter.fahrToCel(fahr);
-        assertEquals(expectedResult, result, ACCEPTED_ERROR);
+        assertEquals(expectedResult, result, ACCEPTABLE_ERROR);
     }
 
     @Test(expected = IllegalArgumentException.class)
@@ -66,7 +66,7 @@ public class TemperatureConverterTest {
         double cel = 100;
         double expResult = 212;
         double result = TemperatureConverter.celToFahr(cel);
-        assertEquals(expResult, result, ACCEPTED_ERROR);
+        assertEquals(expResult, result, ACCEPTABLE_ERROR);
     }
 
     @Test
@@ -74,7 +74,7 @@ public class TemperatureConverterTest {
         double cel = -273.15;
         double expectedResult = -459.67;
         double result = TemperatureConverter.celToFahr(cel);
-        assertEquals(expectedResult, result, ACCEPTED_ERROR);
+        assertEquals(expectedResult, result, ACCEPTABLE_ERROR);
     }
 
     @Test(expected = IllegalArgumentException.class)
