@@ -18,4 +18,13 @@ public class TemperatureConverter {
         double cel = ((fahr - 32) / 9) * 5;
         return cel;
     }
+    
+    public static double celToFahr(double cel) {
+        if (cel < -273.15) {
+            throw new IllegalArgumentException();
+        }
+        
+        double fahr = ((cel / 5) * 9) + 32;
+        return fahr;
+    }
 }
