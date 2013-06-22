@@ -26,6 +26,13 @@ public class ConversionTool {
                     
                     System.out.printf("%f F is %f C\n", fahr, cel);
                 }
+            } else if ("CelToFahr".equals(conversion)) {
+                for (int i = 1; i < args.length; i++) {
+                    double cel = Double.parseDouble(args[i]);
+                    double fahr = TemperatureConverter.celToFahr(cel);
+                    
+                    System.out.printf("%f C is %f F\n", cel, fahr);
+                }
             } else {
                 System.err.println("Unrecognised conversion!");
             }
