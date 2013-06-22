@@ -10,7 +10,7 @@ package conversiontool;
  */
 public class TemperatureConverter {
     
-    public static double fahrToCel(double fahr) {
+    public static double fahrToCel(double fahr) throws IllegalArgumentException {
         if (fahr < -459.67) {
             throw new IllegalArgumentException();
         }
@@ -19,7 +19,7 @@ public class TemperatureConverter {
         return cel;
     }
     
-    public static double celToFahr(double cel) {
+    public static double celToFahr(double cel) throws IllegalArgumentException {
         if (cel < -273.15) {
             throw new IllegalArgumentException();
         }
