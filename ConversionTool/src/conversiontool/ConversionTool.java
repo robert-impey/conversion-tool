@@ -18,23 +18,26 @@ public class ConversionTool {
             System.err.println("Please tell me what to do and give me some numbers to convert!");
         } else {
             String conversion = args[0];
-            
-            if ("FahrToCel".equals(conversion)) {
-                for (int i = 1; i < args.length; i++) {
-                    double fahr = Double.parseDouble(args[i]);
-                    double cel = TemperatureConverter.fahrToCel(fahr);
-                    
-                    System.out.printf("%f F is %f C\n", fahr, cel);
-                }
-            } else if ("CelToFahr".equals(conversion)) {
-                for (int i = 1; i < args.length; i++) {
-                    double cel = Double.parseDouble(args[i]);
-                    double fahr = TemperatureConverter.celToFahr(cel);
-                    
-                    System.out.printf("%f C is %f F\n", cel, fahr);
-                }
-            } else {
-                System.err.println("Unrecognised conversion!");
+            switch (conversion) {
+                case "FahrToCel":
+                    for (int i = 1; i < args.length; i++) {
+                        double fahr = Double.parseDouble(args[i]);
+                        double cel = TemperatureConverter.fahrToCel(fahr);
+                        
+                        System.out.printf("%f F is %f C\n", fahr, cel);
+                    }
+                    break;
+                case "CelToFahr":
+                    for (int i = 1; i < args.length; i++) {
+                        double cel = Double.parseDouble(args[i]);
+                        double fahr = TemperatureConverter.celToFahr(cel);
+                        
+                        System.out.printf("%f C is %f F\n", cel, fahr);
+                    }
+                    break;
+                default:
+                    System.err.println("Unrecognised conversion!");
+                    break;
             }
         }
     }
